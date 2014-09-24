@@ -15,9 +15,9 @@ fibonacci:
 
 	@ R4 = R0 - 0 (update flags)
 	@ if(R0 <= 0) goto .L3 (which returns 0)
-	subs r4, r0, #0
-	cmp r0, #0
-	ble.L3
+	subs r4, r0, #0		;if r4 == 0, Z = 1
+	cmp r0, #0		;this line is no longer needed because Z has alread set
+	ble.L3			;jump to L3 if R0 is less or equal to 0
 	@ Compare R4 wtih 1
 	@ If R4 == 1 goto .L4 (which returns 1)
 	cmp r4, #1
