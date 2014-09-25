@@ -30,7 +30,7 @@ fibonacci:
 	@ R0 = R4 - 2
 	@ Recursive call to fibonacci with R4 - 2 as parameter
 	mov r5, r0
-	sub r0, r4, #2
+	sub r0, r4, #2          @since there is no need doing with CPSR, the instruction use "SUB", without "s"
 	bl fibonacci
 	@ R0 = R5 + R0 (update flags)
 	add r0, r5, r0
